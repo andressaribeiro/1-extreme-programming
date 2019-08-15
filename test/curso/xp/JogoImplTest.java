@@ -57,7 +57,7 @@ public class JogoImplTest {
                 + " @     \n"
                 + "       \n"
                 + "#######\n", jogo.tela());
-        jogo.tick();
+        jogo.direita();
 
         Assert.assertEquals(
                 "       \n"
@@ -113,6 +113,33 @@ public class JogoImplTest {
                 + "       \n"
                 + "       \n"
                 + " @#    \n"
+                + "#######\n", jogo.tela());
+
+        jogo.pulo();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + " @     \n"
+                + " #     \n"
+                + "#######\n", jogo.tela());
+
+        jogo.direita();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + "#@     \n"
+                + "#######\n", jogo.tela());
+
+        jogo.direita();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @     \n"
                 + "#######\n", jogo.tela());
 
 
