@@ -28,12 +28,16 @@ public class Main {
             @Override
             public void keyPressed(KeyEvent e) {
 
+                System.out.flush();
+
                 if(e.getKeyCode() == 39){
                    acoes.direita();
                 }
                 if(e.getKeyCode() == 37) {
                     acoes.esquerda();
                 }
+
+                System.out.println(acoes.tela());
             }
         });
     }

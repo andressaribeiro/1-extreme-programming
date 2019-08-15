@@ -5,6 +5,9 @@ public class AcoesImpl implements Acoes {
 
     private String character = "#";
 
+
+    private String tela ="";
+
     private int currentPosition = 0;
 
     @Override
@@ -20,13 +23,17 @@ public class AcoesImpl implements Acoes {
     @Override
     public void esquerda() {
 
+        tela = "";
+
         String spaces = "";
 
         for(int i = 0; i < currentPosition - 1; i++){
-            spaces = spaces.concat(" ");
+            tela = tela.concat(" ");
         }
 
-        System.out.println(spaces.concat(character));
+        tela.concat(character);
+
+//        System.out.println(spaces.concat(character));
 
         currentPosition = currentPosition - 1;
 
@@ -35,13 +42,16 @@ public class AcoesImpl implements Acoes {
     @Override
     public void direita() {
 
-        String spaces = "";
+//        String spaces = "";
 
+        tela = "";
         for(int i = 0; i <= currentPosition; i++){
-            spaces = spaces.concat(" ");
+            tela = tela.concat(" ");
         }
 
-        System.out.println(spaces.concat(character));
+//       System.out.println(tela.concat(character));
+
+        tela.concat(character);
 
         currentPosition = currentPosition + 1;
 
@@ -59,6 +69,6 @@ public class AcoesImpl implements Acoes {
 
     @Override
     public String tela() {
-        return character;
+        return tela;
     }
 }
