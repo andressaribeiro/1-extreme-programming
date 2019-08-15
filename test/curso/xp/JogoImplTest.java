@@ -12,7 +12,7 @@ public class JogoImplTest {
     private Jogo jogo = new JogoImpl();
 
     @Test
-    @Ignore
+//    @Ignore
     public void testVaiParaEsquerda() {
         Assert.assertEquals(
                      "       \n"

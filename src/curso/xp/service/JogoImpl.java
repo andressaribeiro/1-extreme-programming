@@ -3,7 +3,7 @@ package curso.xp.service;
 public class JogoImpl implements Jogo {
 
 
-    private String character = "#";
+    private String character = "@";
 
     private int currentPosition = 0;
 
@@ -20,30 +20,16 @@ public class JogoImpl implements Jogo {
     @Override
     public void esquerda() {
 
-        String spaces = "\n\n\n\n\n";
-
-        for(int i = 0; i < currentPosition - 1; i++){
-            spaces = spaces.concat(" ");
-        }
-
-        System.out.println(spaces.concat(character));
-
-        currentPosition = currentPosition - 1;
+        this.currentPosition--;
+        System.out.println(this.tela());
 
     }
 
     @Override
     public void direita() {
 
-        String spaces = "\n\n\n\n\n";
-
-        for(int i = 0; i <= currentPosition; i++){
-            spaces = spaces.concat(" ");
-        }
-
-       System.out.println(spaces.concat(character));
-
-        currentPosition = currentPosition + 1;
+        this.currentPosition++;
+        System.out.println(this.tela());
 
     }
 
@@ -59,6 +45,20 @@ public class JogoImpl implements Jogo {
 
     @Override
     public String tela() {
-        return character;
+        String spaces = "       \n";
+        String primeirosEspacos = "";
+        String ultimosEspacos = "";
+
+        for (int i = 0; i < currentPosition; i++) {
+            primeirosEspacos.concat(" ");
+        }
+
+        for (int i = currentPosition; i < 7; i++) {
+            ultimosEspacos.concat(" ");
+        }
+
+        String lineCharacter = primeirosEspacos + character + ultimosEspacos;
+
+        return spaces + spaces + spaces + lineCharacter + "\n#######\n";
     }
 }
