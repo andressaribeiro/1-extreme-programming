@@ -8,6 +8,7 @@ public class UserServiceTest {
 
     private UserService userService = new UserService();
 
+
     @Test
     public void isUserLogged() {
         assertTrue(userService.isUserLogged());
