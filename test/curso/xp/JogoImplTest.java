@@ -17,27 +17,42 @@ public class JogoImplTest {
     public void testVaiParaEsquerda() {
         String telaInicial = acoes.tela();
         Assert.assertEquals(
-                     "        \n"
-                            + "        \n"
-                            + "        \n"
-                            + "        \n"
-                            + "        \n", telaInicial.length());
+                     "       \n"
+                            + "       \n"
+                            + "       \n"
+                            + "@      \n"
+                            + "#######\n", telaInicial);
 
         acoes.esquerda();
 
         String telaDepoisQueFoiPraEsquerda = acoes.tela();
-        Assert.assertEquals("shuahsua", telaDepoisQueFoiPraEsquerda);
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + "@      \n"
+                + "#######\n", telaDepoisQueFoiPraEsquerda);
     }
 
     @Test
     public void testVaiParaDireita() {
         String telaInicial = acoes.tela();
-        Assert.assertEquals("shuahsua", telaInicial);
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + "@      \n"
+                + "#######\n", telaInicial);
 
         acoes.direita();
 
         String telaDepoisQueFoiPraDireita = acoes.tela();
-        Assert.assertEquals("shjaiuhsuas", telaDepoisQueFoiPraDireita);
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @     \n"
+                + "#######\n", telaDepoisQueFoiPraDireita);
     }
 
     @Test
