@@ -19,8 +19,8 @@ public class JogoImplTest {
         Assert.assertEquals(
                 "       \n"
                 + "       \n"
-                + " @     \n"
-                + "       \n"
+                + "@      \n"
+                + "      #\n"
                 + "#######\n", jogo.tela());
 
         jogo.tick();
@@ -29,7 +29,7 @@ public class JogoImplTest {
                 "       \n"
                 + "       \n"
                 + "       \n"
-                + " @     \n"
+                + "@    # \n"
                 + "#######\n", jogo.tela());
 
     }
