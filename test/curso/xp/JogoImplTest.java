@@ -18,7 +18,7 @@ public class JogoImplTest {
                      "       \n"
                             + "       \n"
                             + "       \n"
-                            + "@      \n"
+                            + " @     \n"
                             + "#######\n", jogo.tela());
 
         jogo.esquerda();
@@ -42,6 +42,8 @@ public class JogoImplTest {
                 + "       \n"
                 + " @     \n"
                 + "#######\n", jogo.tela());
+
+
     }
 
     @Test
@@ -55,6 +57,65 @@ public class JogoImplTest {
                 + " @     \n"
                 + "       \n"
                 + "#######\n", jogo.tela());
+        jogo.tick();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @     \n"
+                + "#######\n", jogo.tela());
+
+    }
+    @Test
+    @Ignore
+    public void testObstaculo() {
+        jogo.direita();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @    #\n"
+                + "#######\n", jogo.tela());
+
+        jogo.direita();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @   # \n"
+                + "#######\n", jogo.tela());
+
+        jogo.direita();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @  #  \n"
+                + "#######\n", jogo.tela());
+
+        jogo.direita();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @ #   \n"
+                + "#######\n", jogo.tela());
+
+        jogo.direita();
+
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + " @#    \n"
+                + "#######\n", jogo.tela());
+
+
     }
 
 }
