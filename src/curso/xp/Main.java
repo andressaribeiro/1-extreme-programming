@@ -1,12 +1,11 @@
 package curso.xp;
 
+import curso.xp.service.Jogo;
+import curso.xp.service.JogoImpl;
+
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
-
-import curso.xp.service.Acoes;
-import curso.xp.service.AcoesImpl;
 
 public class Main {
 
@@ -15,9 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Acoes acoes = new AcoesImpl();
+        Jogo jogo = new JogoImpl();
 
-        acoes.tela();
+        jogo.tela();
 
         JFrame frame = new JFrame();
         JButton button = new JButton();
@@ -31,13 +30,13 @@ public class Main {
                 System.out.flush();
 
                 if(e.getKeyCode() == 39){
-                   acoes.direita();
+                   jogo.direita();
                 }
                 if(e.getKeyCode() == 37) {
-                    acoes.esquerda();
+                    jogo.esquerda();
                 }
 
-                System.out.println(acoes.tela());
+//                System.out.println(jogo.tela());
             }
         });
     }

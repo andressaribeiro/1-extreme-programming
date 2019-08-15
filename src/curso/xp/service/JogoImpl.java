@@ -5,9 +5,6 @@ public class JogoImpl implements Jogo {
 
     private String character = "#";
 
-
-    private String tela ="";
-
     private int currentPosition = 0;
 
     @Override
@@ -23,17 +20,13 @@ public class JogoImpl implements Jogo {
     @Override
     public void esquerda() {
 
-        tela = "";
-
-        String spaces = "";
+        String spaces = "\n\n\n\n\n";
 
         for(int i = 0; i < currentPosition - 1; i++){
-            tela = tela.concat(" ");
+            spaces = spaces.concat(" ");
         }
 
-        tela.concat(character);
-
-//        System.out.println(spaces.concat(character));
+        System.out.println(spaces.concat(character));
 
         currentPosition = currentPosition - 1;
 
@@ -42,16 +35,13 @@ public class JogoImpl implements Jogo {
     @Override
     public void direita() {
 
-//        String spaces = "";
+        String spaces = "\n\n\n\n\n";
 
-        tela = "";
         for(int i = 0; i <= currentPosition; i++){
-            tela = tela.concat(" ");
+            spaces = spaces.concat(" ");
         }
 
-//       System.out.println(tela.concat(character));
-
-        tela.concat(character);
+       System.out.println(spaces.concat(character));
 
         currentPosition = currentPosition + 1;
 
@@ -69,6 +59,6 @@ public class JogoImpl implements Jogo {
 
     @Override
     public String tela() {
-        return tela;
+        return character;
     }
 }
