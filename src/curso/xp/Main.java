@@ -27,13 +27,25 @@ public class Main {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                System.out.flush();
+                try {
+                    while (true) {
+                        Thread.sleep(1000);
+                        jogo.tick();
+                        System.out.println(jogo.tela());
 
-                if(e.getKeyCode() == 39){
-                   jogo.direita();
-                }
-                if(e.getKeyCode() == 37) {
-                    jogo.esquerda();
+
+                        System.out.flush();
+
+                        if(e.getKeyCode() == 39){
+                            jogo.direita();
+                        }
+                        if(e.getKeyCode() == 37) {
+                            jogo.esquerda();
+                        }
+
+                    }
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
                 }
 
 //                System.out.println(jogo.tela());

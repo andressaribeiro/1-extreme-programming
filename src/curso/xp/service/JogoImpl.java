@@ -38,7 +38,10 @@ public class JogoImpl implements Jogo {
 
     @Override
     public void tick() {
-        System.out.println(this.tela());
+        if (this.currentPosition == 0) {
+            this.currentPosition = 6;
+        }
+        this.currentPosition--;
     }
 
     @Override
