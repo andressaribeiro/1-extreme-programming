@@ -12,43 +12,8 @@ public class JogoImplTest {
     private Jogo jogo = new JogoImpl();
 
     @Test
-//    @Ignore
-    public void testVaiParaEsquerda() {
-        Assert.assertEquals(
-                     "       \n"
-                            + "       \n"
-                            + "       \n"
-                            + " @     \n"
-                            + "#######\n", jogo.tela());
-
-        jogo.esquerda();
-
-        Assert.assertEquals(
-                "       \n"
-                + "       \n"
-                + "       \n"
-                + "@      \n"
-                + "#######\n", jogo.tela());
-    }
-
-    @Test
     @Ignore
-    public void testVaiParaDireita() {
-        jogo.direita();
-
-        Assert.assertEquals(
-                "       \n"
-                + "       \n"
-                + "       \n"
-                + " @     \n"
-                + "#######\n", jogo.tela());
-
-
-    }
-
-    @Test
-    @Ignore
-    public void testPulaUmEspaco() {
+    public void testPulo() {
         jogo.pulo();
 
         Assert.assertEquals(
