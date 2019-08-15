@@ -1,6 +1,7 @@
 package curso.xp;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import curso.xp.service.Acoes;
@@ -12,52 +13,52 @@ import static org.junit.Assert.assertTrue;
 
 public class JogoImplTest {
 
-    private Jogo acoes = new JogoImpl();
+    private Jogo jogo = new JogoImpl();
+
     @Test
+    @Ignore
     public void testVaiParaEsquerda() {
-        String telaInicial = acoes.tela();
         Assert.assertEquals(
                      "       \n"
                             + "       \n"
                             + "       \n"
                             + "@      \n"
-                            + "#######\n", telaInicial);
+                            + "#######\n", jogo.tela());
 
-        acoes.esquerda();
+        jogo.esquerda();
 
-        String telaDepoisQueFoiPraEsquerda = acoes.tela();
         Assert.assertEquals(
                 "       \n"
                 + "       \n"
                 + "       \n"
                 + "@      \n"
-                + "#######\n", telaDepoisQueFoiPraEsquerda);
+                + "#######\n", jogo.tela());
     }
 
     @Test
+    @Ignore
     public void testVaiParaDireita() {
-        String telaInicial = acoes.tela();
-        Assert.assertEquals(
-                "       \n"
-                + "       \n"
-                + "       \n"
-                + "@      \n"
-                + "#######\n", telaInicial);
+        jogo.direita();
 
-        acoes.direita();
-
-        String telaDepoisQueFoiPraDireita = acoes.tela();
         Assert.assertEquals(
                 "       \n"
                 + "       \n"
                 + "       \n"
                 + " @     \n"
-                + "#######\n", telaDepoisQueFoiPraDireita);
+                + "#######\n", jogo.tela());
     }
 
     @Test
-    public void testNaoApareceRastrosQuandoSeMove() {
+    @Ignore
+    public void testPulaUmEspaco() {
+        jogo.pulo();
 
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + " @     \n"
+                + "       \n"
+                + "#######\n", jogo.tela());
     }
 
 }
