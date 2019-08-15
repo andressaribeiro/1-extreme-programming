@@ -5,7 +5,7 @@ public class JogoImpl implements Jogo {
 
     private String character = "@";
 
-    private int currentPosition = 0;
+    private int currentPosition = 6;
 
     @Override
     public void sobe() {
@@ -28,9 +28,7 @@ public class JogoImpl implements Jogo {
     @Override
     public void direita() {
 
-        this.currentPosition++;
-        System.out.println(this.tela());
-
+        this.currentPosition--;
     }
 
     @Override
@@ -40,7 +38,7 @@ public class JogoImpl implements Jogo {
 
     @Override
     public void tick() {
-
+        System.out.println(this.tela());
     }
 
     @Override
@@ -50,15 +48,15 @@ public class JogoImpl implements Jogo {
         String ultimosEspacos = "";
 
         for (int i = 0; i < currentPosition; i++) {
-            primeirosEspacos.concat(" ");
+            primeirosEspacos = primeirosEspacos.concat(" ");
         }
 
         for (int i = currentPosition; i < 7; i++) {
-            ultimosEspacos.concat(" ");
+            ultimosEspacos = ultimosEspacos.concat(" ");
         }
 
-        String lineCharacter = primeirosEspacos + character + ultimosEspacos;
+        String obstaculo = primeirosEspacos + "#" + ultimosEspacos;
 
-        return spaces + spaces + spaces + lineCharacter + "\n#######\n";
+        return spaces + spaces + spaces + obstaculo + "\n#######\n";
     }
 }
