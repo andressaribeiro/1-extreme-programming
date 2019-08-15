@@ -4,12 +4,8 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import curso.xp.service.Acoes;
-import curso.xp.service.AcoesImpl;
 import curso.xp.service.Jogo;
 import curso.xp.service.JogoImpl;
-
-import static org.junit.Assert.assertTrue;
 
 public class JogoImplTest {
 
