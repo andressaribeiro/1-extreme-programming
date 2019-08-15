@@ -1,6 +1,6 @@
 package curso.xp.service;
 
-public interface Acoes {
+public interface Jogo {
 
     public void sobe();
     public void desce();

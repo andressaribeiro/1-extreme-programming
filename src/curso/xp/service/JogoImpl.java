@@ -1,6 +1,6 @@
 package curso.xp.service;
 
-public class AcoesImpl implements Acoes {
+public class JogoImpl implements Jogo {
 
 
     private String character = "#";
