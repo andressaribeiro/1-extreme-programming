@@ -57,7 +57,8 @@ public class JogoImplTest {
                 + " @     \n"
                 + "       \n"
                 + "#######\n", jogo.tela());
-        jogo.direita();
+
+        jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
