@@ -5,13 +5,14 @@ import org.junit.Test;
 
 import curso.xp.service.Acoes;
 import curso.xp.service.AcoesImpl;
+import curso.xp.service.Jogo;
+import curso.xp.service.JogoImpl;
 
 import static org.junit.Assert.assertTrue;
 
 public class JogoImplTest {
 
-    private Acoes acoes = new AcoesImpl();
-
+    private Jogo acoes = new JogoImpl();
     @Test
     public void testVaiParaEsquerda() {
         String telaInicial = acoes.tela();
