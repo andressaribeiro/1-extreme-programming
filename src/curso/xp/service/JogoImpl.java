@@ -44,7 +44,7 @@ public class JogoImpl implements Jogo {
     @Override
     public String tela() {
         String spaces = "       \n";
-        String primeirosEspacos = "";
+        String primeirosEspacos = character;
         String ultimosEspacos = "";
 
         for (int i = 0; i < currentPosition; i++) {
@@ -55,7 +55,7 @@ public class JogoImpl implements Jogo {
             ultimosEspacos = ultimosEspacos.concat(" ");
         }
 
-        String obstaculo = character + primeirosEspacos + "#" + ultimosEspacos;
+        String obstaculo =  primeirosEspacos + "#" + ultimosEspacos;
 
         return  spaces + spaces + spaces + obstaculo + "\n#######\n";
     }
