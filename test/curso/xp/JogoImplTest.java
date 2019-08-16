@@ -36,13 +36,13 @@ public class JogoImplTest {
     @Test
     @Ignore
     public void testObstaculo() {
-        jogo.direita();
+        jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
                 + "       \n"
                 + "       \n"
-                + " @    #\n"
+                + "@     #\n"
                 + "#######\n", jogo.tela());
 
         jogo.direita();
