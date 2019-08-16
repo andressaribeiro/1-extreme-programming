@@ -28,20 +28,22 @@ public class JogoImplTest {
     @Test
     @Ignore
     public void testTick() {
-        tela("       \n" +
-             "       \n" +
-             "       \n" +
-             "@     #\n" +
-             "#######\n");
+        tela("0      \n"
+                     + "       \n"
+                     + "       \n"
+                     + "       \n"
+                     + "@     #\n"
+                     + "#######\n");
 
         jogo.tick();
         jogo.tick();
 
-        tela("       \n"
-                + "       \n"
-                + "       \n"
-                + "@   #  \n"
-                + "#######\n");
+        tela("2      \n"
+                     + "       \n"
+                     + "       \n"
+                     + "       \n"
+                     + "@   #  \n"
+                     + "#######\n");
     }
 
     private void tela(String expected) {
@@ -55,7 +57,8 @@ public class JogoImplTest {
         jogo.pulo();
 
         Assert.assertEquals(
-                "       \n"
+                "0      \n"
+                        + "       \n"
                         + "       \n"
                         + "@      \n"
                         + "      #\n"
@@ -64,7 +67,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "1      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@    # \n"
@@ -75,7 +79,8 @@ public class JogoImplTest {
     @Ignore
     public void testObstaculoComPulo() {
         Assert.assertEquals(
-                "       \n"
+                "0      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@     #\n"
@@ -84,7 +89,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "1      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@    # \n"
@@ -93,7 +99,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "2      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@   #  \n"
@@ -102,7 +109,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "3      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@  #   \n"
@@ -111,7 +119,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "4      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@ #    \n"
@@ -120,7 +129,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "5      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@#     \n"
@@ -129,7 +139,8 @@ public class JogoImplTest {
         jogo.pulo();
 
         Assert.assertEquals(
-                "       \n"
+                "6      \n"
+                        + "       \n"
                         + "       \n"
                         + "@      \n"
                         + "#      \n"
@@ -138,7 +149,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "7      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "@     #\n"
@@ -156,7 +168,8 @@ public class JogoImplTest {
         jogo.tick();
 
         Assert.assertEquals(
-                "       \n"
+                "6      \n"
+                        + "       \n"
                         + "       \n"
                         + "       \n"
                         + "x      \n"
@@ -166,5 +179,5 @@ public class JogoImplTest {
     private String tela() {
         return jogo.tela();
     }
-
+    
 }
