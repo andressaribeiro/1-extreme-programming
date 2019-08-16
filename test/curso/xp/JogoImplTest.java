@@ -1,11 +1,10 @@
 package curso.xp;
 
+import curso.xp.service.Jogo;
+import curso.xp.service.JogoImpl;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-
-import curso.xp.service.Jogo;
-import curso.xp.service.JogoImpl;
 
 public class JogoImplTest {
 
@@ -18,48 +17,40 @@ public class JogoImplTest {
 
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + "@      \n"
-                + "      #\n"
-                + "#######\n", jogo.tela());
+                        + "       \n"
+                        + "@      \n"
+                        + "      #\n"
+                        + "#######\n", jogo.tela());
 
         jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + "       \n"
-                + "@    # \n"
-                + "#######\n", jogo.tela());
+                        + "       \n"
+                        + "       \n"
+                        + "@    # \n"
+                        + "#######\n", jogo.tela());
 
     }
+
     @Test
     @Ignore
     public void testObstaculoComPulo() {
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + "       \n"
-                + "@     #\n"
-                + "#######\n", jogo.tela());
+                        + "       \n"
+                        + "       \n"
+                        + "@     #\n"
+                        + "#######\n", jogo.tela());
 
         jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + "       \n"
-                + "@    # \n"
-                + "#######\n", jogo.tela());
-
-        jogo.tick();
-
-        Assert.assertEquals(
-                "       \n"
-                + "       \n"
-                + "       \n"
-                + "@   #  \n"
-                + "#######\n", jogo.tela());
+                        + "       \n"
+                        + "       \n"
+                        + "@    # \n"
+                        + "#######\n", jogo.tela());
 
         jogo.tick();
 
@@ -70,42 +61,50 @@ public class JogoImplTest {
                         + "@   #  \n"
                         + "#######\n", jogo.tela());
 
-        jogo.direita();
+        jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + "       \n"
-                + " @#    \n"
-                + "#######\n", jogo.tela());
+                        + "       \n"
+                        + "       \n"
+                        + "@  #   \n"
+                        + "#######\n", jogo.tela());
+
+        jogo.tick();
+
+        Assert.assertEquals(
+                "       \n"
+                        + "       \n"
+                        + "       \n"
+                        + "@ #    \n"
+                        + "#######\n", jogo.tela());
+
+        jogo.tick();
+
+        Assert.assertEquals(
+                "       \n"
+                        + "       \n"
+                        + "       \n"
+                        + "@#     \n"
+                        + "#######\n", jogo.tela());
 
         jogo.pulo();
 
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + " @     \n"
-                + " #     \n"
-                + "#######\n", jogo.tela());
+                        + "       \n"
+                        + "@      \n"
+                        + "#      \n"
+                        + "#######\n", jogo.tela());
 
-        jogo.direita();
-
-        Assert.assertEquals(
-                "       \n"
-                + "       \n"
-                + "       \n"
-                + "#@     \n"
-                + "#######\n", jogo.tela());
-
-        jogo.direita();
+        jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + "       \n"
-                + " @     \n"
-                + "#######\n", jogo.tela());
-
+                        + "       \n"
+                        + "       \n"
+                        + "@     #\n"
+                        + "#######\n", jogo.tela());
 
     }
 
