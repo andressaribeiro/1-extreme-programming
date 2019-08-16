@@ -10,22 +10,6 @@ public class JogoImpl implements Jogo {
     private boolean pulando = false;
 
     @Override
-    public void sobe() {
-    }
-
-    @Override
-    public void desce() {
-    }
-
-    @Override
-    public void esquerda() {
-    }
-
-    @Override
-    public void direita() {
-    }
-
-    @Override
     public void pulo() {
         pulando = true;
     }

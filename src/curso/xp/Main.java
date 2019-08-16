@@ -10,10 +10,7 @@ import java.awt.event.KeyEvent;
 public class Main {
     static Jogo jogo = new JogoImpl();
 
-
-
     public static void main(String[] args) throws InterruptedException {
-
 
         JFrame frame = new JFrame();
         JButton button = new JButton();
@@ -23,14 +20,6 @@ public class Main {
 
             @Override
             public void keyPressed(KeyEvent e) {
-
-
-                if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-                    jogo.direita();
-                }
-                if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-                    jogo.esquerda();
-                }
                 if (e.getKeyCode() == KeyEvent.VK_UP) {
                     jogo.pulo();
                 }
@@ -45,8 +34,6 @@ public class Main {
             Thread.sleep(1000);
             jogo.tick();
             System.out.println(jogo.tela());
-
-
         }
     }
 }
