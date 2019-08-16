@@ -35,42 +35,40 @@ public class JogoImplTest {
     }
     @Test
     @Ignore
-    public void testObstaculo() {
-        jogo.direita();
+    public void testObstaculoComPulo() {
+        Assert.assertEquals(
+                "       \n"
+                + "       \n"
+                + "       \n"
+                + "@     #\n"
+                + "#######\n", jogo.tela());
+
+        jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
                 + "       \n"
                 + "       \n"
-                + " @    #\n"
+                + "@    # \n"
                 + "#######\n", jogo.tela());
 
-        jogo.direita();
+        jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
                 + "       \n"
                 + "       \n"
-                + " @   # \n"
+                + "@   #  \n"
                 + "#######\n", jogo.tela());
 
-        jogo.direita();
+        jogo.tick();
 
         Assert.assertEquals(
                 "       \n"
-                + "       \n"
-                + "       \n"
-                + " @  #  \n"
-                + "#######\n", jogo.tela());
-
-        jogo.direita();
-
-        Assert.assertEquals(
-                "       \n"
-                + "       \n"
-                + "       \n"
-                + " @ #   \n"
-                + "#######\n", jogo.tela());
+                        + "       \n"
+                        + "       \n"
+                        + "@   #  \n"
+                        + "#######\n", jogo.tela());
 
         jogo.direita();
 
