@@ -17,6 +17,7 @@ public class JogoImplTest {
     }
 
     @Test
+    @Ignore
     public void testTick() {
         Assert.assertEquals(
                 "       \n"
