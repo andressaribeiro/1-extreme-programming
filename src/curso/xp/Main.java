@@ -8,15 +8,12 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Main {
+    static Jogo jogo = new JogoImpl();
 
 
 
+    public static void main(String[] args) throws InterruptedException {
 
-    public static void main(String[] args) {
-
-        Jogo jogo = new JogoImpl();
-
-        jogo.tela();
 
         JFrame frame = new JFrame();
         JButton button = new JButton();
@@ -27,29 +24,29 @@ public class Main {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                try {
-                    while (true) {
-                        Thread.sleep(1000);
-                        jogo.tick();
-                        System.out.println(jogo.tela());
 
-
-                        System.out.flush();
-
-                        if(e.getKeyCode() == 39){
-                            jogo.direita();
-                        }
-                        if(e.getKeyCode() == 37) {
-                            jogo.esquerda();
-                        }
-
-                    }
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
+                if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    jogo.direita();
                 }
-
-//                System.out.println(jogo.tela());
+                if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                    jogo.esquerda();
+                }
+                if (e.getKeyCode() == KeyEvent.VK_UP) {
+                    jogo.pulo();
+                }
             }
         });
+
+        gameLoop();
+    }
+
+    public static void gameLoop() throws InterruptedException {
+        while (true) {
+            Thread.sleep(1000);
+            jogo.tick();
+            System.out.println(jogo.tela());
+
+
+        }
     }
 }

@@ -7,33 +7,27 @@ public class JogoImpl implements Jogo {
 
     private int currentPosition = 6;
 
+    private boolean pulando = false;
+
     @Override
     public void sobe() {
-
     }
 
     @Override
     public void desce() {
-
     }
 
     @Override
     public void esquerda() {
-
-        this.currentPosition--;
-        System.out.println(this.tela());
-
     }
 
     @Override
     public void direita() {
-
-        this.currentPosition--;
     }
 
     @Override
     public void pulo() {
-
+        pulando = true;
     }
 
     @Override
@@ -46,12 +40,13 @@ public class JogoImpl implements Jogo {
 
     @Override
     public String tela() {
-        String spaces = "       \n";
-        String primeirosEspacos = character;
+        String espacos = "       \n";
+        String primeirosEspacos = character + (pulando ? "\n" : "");
         String ultimosEspacos = "";
 
         for (int i = 0; i < currentPosition; i++) {
             primeirosEspacos = primeirosEspacos.concat(" ");
+
         }
 
         for (int i = currentPosition; i < 7; i++) {
@@ -60,6 +55,8 @@ public class JogoImpl implements Jogo {
 
         String obstaculo =  primeirosEspacos + "#" + ultimosEspacos;
 
-        return  spaces + spaces + spaces + obstaculo + "\n#######\n";
+        pulando = false;
+
+        return  espacos + espacos + espacos + obstaculo + "\n#######\n";
     }
 }
