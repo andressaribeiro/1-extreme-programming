@@ -18,22 +18,25 @@ public class JogoImplTest {
 
     @Test
     public void testTick() {
-        Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@     #\n"
-                        + "#######\n", jogo.tela());
+        tela("       \n" +
+             "       \n" +
+             "       \n" +
+             "@     #\n" +
+             "#######\n");
 
         jogo.tick();
         jogo.tick();
 
+        tela("       \n"
+                + "       \n"
+                + "       \n"
+                + "@   #  \n"
+                + "#######\n");
+    }
+
+    private void tela(String expected) {
         Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@   #  \n"
-                        + "#######\n", jogo.tela());
+                expected, tela());
     }
 
     @Test
@@ -45,7 +48,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "@      \n"
                         + "      #\n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.tick();
 
@@ -54,7 +57,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@    # \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
     }
 
     @Test
@@ -64,7 +67,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@     #\n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.tick();
 
@@ -73,7 +76,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@    # \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.tick();
 
@@ -82,7 +85,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@   #  \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.tick();
 
@@ -91,7 +94,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@  #   \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.tick();
 
@@ -100,7 +103,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@ #    \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.tick();
 
@@ -109,7 +112,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@#     \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.pulo();
 
@@ -118,7 +121,7 @@ public class JogoImplTest {
                         + "       \n"
                         + "@      \n"
                         + "#      \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
 
         jogo.tick();
 
@@ -127,63 +130,16 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "@     #\n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
     }
 
     @Test
     public void testObstaculoComColisao() {
-        Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@     #\n"
-                        + "#######\n", jogo.tela());
-
         jogo.tick();
-
-        Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@    # \n"
-                        + "#######\n", jogo.tela());
-
         jogo.tick();
-
-        Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@   #  \n"
-                        + "#######\n", jogo.tela());
-
         jogo.tick();
-
-        Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@  #   \n"
-                        + "#######\n", jogo.tela());
-
         jogo.tick();
-
-        Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@ #    \n"
-                        + "#######\n", jogo.tela());
-
         jogo.tick();
-
-        Assert.assertEquals(
-                "       \n"
-                        + "       \n"
-                        + "       \n"
-                        + "@#     \n"
-                        + "#######\n", jogo.tela());
-
         jogo.tick();
 
         Assert.assertEquals(
@@ -191,7 +147,11 @@ public class JogoImplTest {
                         + "       \n"
                         + "       \n"
                         + "x      \n"
-                        + "#######\n", jogo.tela());
+                        + "#######\n", tela());
+    }
+
+    private String tela() {
+        return jogo.tela();
     }
 
 }

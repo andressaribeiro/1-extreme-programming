@@ -3,7 +3,11 @@ package curso.xp.service;
 public class JogoImpl implements Jogo {
 
 
-    private String character = "@";
+    {
+        System.out.println("Criou");
+    }
+
+    private String bunny = "@";
 
     private int currentPosition = 6;
 
@@ -16,6 +20,10 @@ public class JogoImpl implements Jogo {
 
     @Override
     public void tick() {
+        andarObstaculo();
+    }
+
+    private void andarObstaculo() {
         if (this.currentPosition == -1) {
             this.currentPosition = 6;
         }
@@ -25,14 +33,14 @@ public class JogoImpl implements Jogo {
     @Override
     public String tela() {
         String espacos = "      \n";
-        boolean estaColidindo = currentPosition == 0;
         String linhaDoPulo = "";
 
         if(pulando) {
+            boolean estaColidindo = currentPosition == 0;
             boolean pulandoDuranteColisao = estaColidindo && pulando;
             linhaDoPulo = pulandoDuranteColisao ? "\n" : "\n ";
         }
-        String primeirosEspacos = character + linhaDoPulo;
+        String primeirosEspacos = bunny + linhaDoPulo;
         String ultimosEspacos = "";
 
         for (int i = 0; i < currentPosition; i++) {

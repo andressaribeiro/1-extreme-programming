@@ -8,7 +8,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Main {
-    static Jogo jogo = new JogoImpl();
+    private static Jogo jogo = new JogoImpl();
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -29,7 +29,7 @@ public class Main {
         gameLoop();
     }
 
-    public static void gameLoop() throws InterruptedException {
+    private static void gameLoop() throws InterruptedException {
         while (true) {
             Thread.sleep(1000);
             jogo.tick();
