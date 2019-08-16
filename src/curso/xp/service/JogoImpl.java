@@ -32,7 +32,7 @@ public class JogoImpl implements Jogo {
 
     @Override
     public void tick() {
-        if (this.currentPosition == 0) {
+        if (this.currentPosition == -1) {
             this.currentPosition = 6;
         }
         this.currentPosition--;
@@ -40,8 +40,15 @@ public class JogoImpl implements Jogo {
 
     @Override
     public String tela() {
-        String espacos = "       \n";
-        String primeirosEspacos = character + (pulando ? "\n" : "");
+        String espacos = "      \n";
+        boolean estaColidindo = currentPosition == 0;
+        String linhaDoPulo = "";
+
+        if(pulando) {
+            boolean pulandoDuranteColisao = estaColidindo && pulando;
+            linhaDoPulo = pulandoDuranteColisao ? "\n" : "\n ";
+        }
+        String primeirosEspacos = character + linhaDoPulo;
         String ultimosEspacos = "";
 
         for (int i = 0; i < currentPosition; i++) {

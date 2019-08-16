@@ -17,7 +17,6 @@ public class JogoImplTest {
     }
 
     @Test
-    @Ignore
     public void testTick() {
         Assert.assertEquals(
                 "       \n"
@@ -38,7 +37,6 @@ public class JogoImplTest {
     }
 
     @Test
-    @Ignore
     public void testPulo() {
         jogo.pulo();
 
@@ -60,7 +58,6 @@ public class JogoImplTest {
     }
 
     @Test
-    @Ignore
     public void testObstaculoComPulo() {
         Assert.assertEquals(
                 "       \n"
@@ -134,7 +131,6 @@ public class JogoImplTest {
     }
 
     @Test
-    @Ignore
     public void testObstaculoComColisao() {
         Assert.assertEquals(
                 "       \n"
