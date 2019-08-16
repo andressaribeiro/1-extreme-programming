@@ -17,6 +17,16 @@ public class JogoImplTest {
     }
 
     @Test
+    public void testIniciarJogo() {
+        tela("       \n" +
+                "       \n" +
+                "       \n" +
+                "@     #\n" +
+                "#######\n");
+    }
+
+    @Test
+    @Ignore
     public void testTick() {
         tela("       \n" +
              "       \n" +
@@ -40,6 +50,7 @@ public class JogoImplTest {
     }
 
     @Test
+    @Ignore
     public void testPulo() {
         jogo.pulo();
 
@@ -61,6 +72,7 @@ public class JogoImplTest {
     }
 
     @Test
+    @Ignore
     public void testObstaculoComPulo() {
         Assert.assertEquals(
                 "       \n"
@@ -134,6 +146,7 @@ public class JogoImplTest {
     }
 
     @Test
+    @Ignore
     public void testObstaculoComColisao() {
         jogo.tick();
         jogo.tick();

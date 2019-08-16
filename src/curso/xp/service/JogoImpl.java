@@ -2,20 +2,18 @@ package curso.xp.service;
 
 public class JogoImpl implements Jogo {
 
-
-    {
-        System.out.println("Criou");
-    }
-
     private String bunny = "@";
 
     private int currentPosition = 6;
 
     private boolean pulando = false;
 
+    String linhaDoPulo = "      \n";
+
     @Override
     public void pulo() {
         pulando = true;
+        linhaDoPulo = bunny + "     \n";
     }
 
     @Override
@@ -32,30 +30,31 @@ public class JogoImpl implements Jogo {
 
     @Override
     public String tela() {
-        String espacos = "      \n";
-        String linhaDoPulo = "";
+        String espacos = "       \n";
+        String chao = "\n#######\n";
 
-        if(pulando) {
-            boolean estaColidindo = currentPosition == 0;
-            boolean pulandoDuranteColisao = estaColidindo && pulando;
-            linhaDoPulo = pulandoDuranteColisao ? "\n" : "\n ";
+        if (!pulando) {
+            linhaDoPulo = espacos;
         }
-        String primeirosEspacos = bunny + linhaDoPulo;
-        String ultimosEspacos = "";
-
-        for (int i = 0; i < currentPosition; i++) {
-            primeirosEspacos = primeirosEspacos.concat(" ");
-
-        }
-
-        for (int i = currentPosition; i < 7; i++) {
-            ultimosEspacos = ultimosEspacos.concat(" ");
-        }
-
-        String obstaculo =  primeirosEspacos + "#" + ultimosEspacos;
 
         pulando = false;
 
-        return  espacos + espacos + espacos + obstaculo + "\n#######\n";
+        String linhaDoObstaculo = bunny + "     #";
+
+        String primeirosEspacos = "";
+        String ultimosEspacos = "";
+
+        for (int i = 0; i < currentPosition; i++) {
+            primeirosEspacos = primeirosEspacos.concat(".");
+        }
+
+        for (int i = currentPosition; i < 6; i++) {
+            ultimosEspacos = ultimosEspacos.concat("-");
+        }
+
+        String linhaBase = primeirosEspacos + "#" + ultimosEspacos;
+
+        return espacos + espacos + linhaDoPulo + linhaBase + chao;
     }
+
 }
